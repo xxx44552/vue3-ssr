@@ -1,7 +1,3 @@
-import { createSSRApp } from "vue";
-
-import App from './App/index.vue'
-
-const app = createSSRApp(App);
+import app from './main';
 
 app.mount("#app");
