@@ -4,7 +4,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require("vue-loader");
 const {WebpackManifestPlugin} = require('webpack-manifest-plugin')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = ({ target }) => {
 
@@ -28,7 +27,7 @@ module.exports = ({ target }) => {
   if (target === 'server') {
     plugins.push(new WebpackManifestPlugin({
       fileName: 'ssr-manifest.json'
-    }), new MiniCssExtractPlugin())
+    }))
     Object.assign(output, {
       libraryTarget: 'commonjs2',
     })
